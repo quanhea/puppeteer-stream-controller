@@ -1,0 +1,11 @@
+{
+  "name": "puppeteer-stream-controller",
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "key": "8msqz4JoghKwfDYPgQRzEneJemPztkPb4lQseIHgQ/IPR2CHX5c/NA==",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["tabs", "tabCapture"],
+  "incognito": "split"
+}

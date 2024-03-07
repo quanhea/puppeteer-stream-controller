@@ -1,0 +1,85 @@
+{
+  "name": "puppeteer-stream-controller",
+  "author": "Anh Tran <quanhdev@gmail.com>",
+  "description": "Capture tab audio and video stream while using puppeteer",
+  "keywords": [
+    "puppeteer",
+    "stream",
+    "audio",
+    "video",
+    "media",
+    "capture",
+    "streaming",
+    "recording",
+    "incognito",
+    "puppeteer-stream",
+    "puppeteer-extension",
+    "stream-controller",
+    "puppeteer-stream-controller",
+    "puppeteer-audio",
+    "puppeteer-video"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quanhea/puppeteer-stream-controller.git"
+  },
+  "license": "Apache-2.0",
+  "version": "1.0.0",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "all"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "npm run build:extension && npm run build:types && tsup ./src/index.ts --format cjs --sourcemap && npm run copy:extension",
+    "build:extension": "tsc -p src/extension",
+    "build:types": "tsc --build",
+    "copy:extension": "cp src/extension/index.html dist/extension/index.html && cp src/extension/manifest.json dist/extension/manifest.json",
+    "prettier:fix": "prettier --write .",
+    "prepare": "husky install",
+    "lint": "eslint . --ext .ts --ignore-pattern dist",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "puppeteer-core": "^22.4.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.262",
+    "@types/ws": "^8.5.10",
+    "@typescript-eslint/eslint-plugin": "^7.1.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}
