@@ -1,10 +1,12 @@
 # puppeteer-stream-controller
 
+[![npm latest][0]][1] [![node compatibility][2]][3]
+
 `puppeteer-stream-controller` is a library that provides an easy-to-use API for managing media streams within a Puppeteer context. This library is particularly useful when building applications that handle audio and video streams, enabling developers to control the flow of media programmatically.
 
 ## Installation
 
-Install the library via npm:
+Install the library:
 
 ```bash
 npm install puppeteer-stream-controller
@@ -26,7 +28,11 @@ Here's a simple example of how to use `puppeteer-stream-controller`:
 
 ```javascript
 import puppeteer from 'puppeteer';
-import { StreamController, getLaunchArgs, allowInIncognito } from 'puppeteer-stream-controller';
+import {
+  StreamController,
+  getLaunchArgs,
+  allowInIncognito,
+} from 'puppeteer-stream-controller';
 
 const opts = {
   audio: true,
@@ -124,3 +130,8 @@ This project is inspired by [puppeteer-stream](https://github.com/SamuelScheit/p
 ## License
 
 `puppeteer-stream-controller` is [Apache-2.0 licensed](https://github.com/quanhea/puppeteer-stream-controller/blob/main/LICENSE).
+
+[0]: https://img.shields.io/npm/v/puppeteer-stream-controller.svg?style=flat-square
+[1]: https://www.npmjs.com/package/puppeteer-stream-controller
+[2]: https://img.shields.io/node/v/puppeteer-stream-controller.svg
+[3]: https://nodejs.org/en/about/previous-releases
