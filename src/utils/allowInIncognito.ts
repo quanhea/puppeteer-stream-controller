@@ -2,7 +2,7 @@ import { Browser, BrowserContext } from 'puppeteer-core';
 
 import { EXTENSION_ID } from './constants';
 
-export const allowInInCogito = async (browser: Browser | BrowserContext) => {
+export const allowInIncognito = async (browser: Browser | BrowserContext) => {
   const settings = await browser.newPage();
   await settings.goto(`chrome://extensions/?id=${EXTENSION_ID}`);
   await settings.evaluate(() => {
