@@ -25,8 +25,8 @@ yarn add puppeteer-stream-controller
 Here's a simple example of how to use `puppeteer-stream-controller`:
 
 ```javascript
-const puppeteer = require('puppeteer');
-const StreamController = require('puppeteer-stream-controller');
+import puppeteer from 'puppeteer';
+import { StreamController, getLaunchArgs, allowInIncognito } from 'puppeteer-stream-controller';
 
 const opts = {
   audio: true,
@@ -86,7 +86,7 @@ Creates a new instance of `StreamController`.
   - `audio`: A boolean indicating whether to include audio in the stream.
   - `video`: A boolean indicating whether to include video in the stream.
   - `mimeType`: The MIME type of the stream ('audio/webm' or 'video/webm').
-  - `timeSlice`: The frame size of the stream.
+  - `timeSlice`: The number of milliseconds to record into each [Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob).
 - `wss`: An optional WebSocket server to handle the streaming.
 
 #### `getStream(): Promise<Transform | null>`
